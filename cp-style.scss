@@ -1,0 +1,890 @@
+@import 'node_modules/jeet/scss/index';
+
+
+// Global styles
+small {
+  @include center;
+  text-align: center;
+  color: #C40000;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+// 
+
+
+
+// Animations
+.fade-in {
+  opacity: 0;
+  transform: translateY(20vh);
+  visibility: hidden;
+  transition: opacity 0.6s ease-out, transform 1.2s ease-out;
+  will-change: opacity, visibility;
+}
+.is-visible {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+}
+//
+
+
+
+// Navigation section
+.nav {
+  background-color: #ffffff;
+  padding: 50px 25px 50px 25px;
+
+  @include mobile {
+    padding: 30px 18px 30px 18px;
+  }
+  &__logo {
+    height: 42px;
+    @include mobile {
+      height: 30px;
+    }
+  }
+  &__links {
+    @include main-font;
+    color: #494949;
+    font-size: 20px;
+    font-weight: 300;
+    float: right;
+    @include mobile {
+      font-size: 14px;
+    }
+    a, p {
+      color: #494949;
+      font-style: normal;
+      text-decoration: none;
+      padding: 20px 20px;
+      @include mobile {
+      padding: 12px 12px;
+    }
+      transition: 0.3s;
+    }
+    a:hover {
+      color: #C3C3C3;
+    }
+    a:active {
+      color: #FFC034;
+    }
+    p:hover {
+      color: #FFC034;
+    }
+    p:active {
+      color: #FFC034;
+    }
+  }
+}
+// 
+
+
+// Hero section
+.hero {
+  @include main-font;
+  padding: 25px 25px;
+  height: 660px;
+  @include thinnest {
+    height: 700px;
+  }
+  &__textarea {
+    @include floatIn;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 10px;
+    @include thinnest {
+      min-width: 500px;
+    }
+    @include mobile {
+      min-width: 350px;
+    }
+    img {
+      width: 26px;
+      margin-bottom: -4px;
+      margin-left: 5px;
+      margin-right: 18px;
+    }
+    h1, h2 {
+      font-size: 30px;
+      font-weight: 400;
+      letter-spacing: 0.2;
+      @include mobile {
+      font-size: 22px;
+      }
+    }
+    h2 {
+      margin-bottom: 92px;
+      line-height: 1.4;
+        u {
+          text-decoration: none;
+          background-color: #FFF2D8;
+          padding-left: 6px;
+          padding-right: 6px;
+          padding-bottom: 1px;
+          margin-right: -2px;
+          margin-left: -2px;
+      }
+    }
+    em {
+      color: #FFC034;
+      font-style: normal;
+      font-weight: 600;
+    }
+  }
+  &__btn {
+    background-color: #FFC034;
+    border-radius: 999px;
+    border: none;
+    color: #ffffff;
+    font-size: 26px;
+    font-weight: 600;
+    margin: 0 auto;
+    text-align: center;
+    padding: 8px 30px 8px 30px;
+    transition: 0.3s;
+    img {
+      width: 26px;
+      margin-bottom: -5px;
+      margin-left: 15px;
+    }
+    @include mobile-small {
+      font-size: 22px;
+    }
+  }
+  &__btn:hover {
+    background-color: #000000;
+    color: #ffffff;
+    cursor: pointer;
+  }
+    &__trees {
+    z-index: 1;
+    height: 450px;
+    position: relative;
+    display: inline-block;
+    top: 280px;
+    @include thin {
+      max-height: 55%;
+      height: inherit;
+      top: 380px;
+    }
+    @include thinner {
+      max-height: 43%;
+      top:450px;
+    }
+    @include thinnest {
+      max-width: 86%;
+      max-height: inherit;
+      top: 300px;
+    }
+    &--left {
+      float: left;
+      margin-left: -25px;
+    }
+    &--right {
+      float: right;
+      margin-right: -25px;
+      @include thinnest {
+        display: none;
+      }
+    }
+  }
+}
+// 
+
+
+
+// Projects overview
+.overview {
+  z-index: 0;
+  background-color: #F7F7F7;
+  padding-top: 200px;
+  @include mobile {
+    padding-top: 100px;
+  }
+  h2 {
+    @include main-font;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 90px;
+  }
+}
+//
+
+
+// Individual homepage projects 
+.project {
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  @include mobile {
+    margin-left: 4px;
+    margin-right: 4px;
+  }
+  &__box {
+    padding: 52px;
+    @include mobile {
+      padding: 35px;
+    }
+    max-width: 90%;
+    background-color: #ffffff;
+    border-radius: 18px;
+    position: absolute;
+    bottom: 50px;
+    margin-right: 50px;
+    margin-left: 50px;
+    @include mobile {
+      margin-left: 14px;
+      margin-right: 14px;
+    }
+    box-shadow: 6px 6px 40px 0px rgba(0, 0, 0, .1);
+  }
+  &__tag {
+    @include main-font;
+    font-size: 16px;
+    font-weight: 500;
+    display: inline-block;
+    text-align: center;
+    border-radius: 999px;
+    padding: 5px 12px 5px 12px;
+    margin-right: 4px;
+    @include mobile {
+      font-size: 12px;
+      padding: 4px 10px 4px 10px;
+      margin-bottom: 6px;
+    }
+    &--orange {
+      color: #FFB000;
+      background-color: #FEF5EF;
+    }
+    &--blue {
+      color: #879EF8;
+      background-color: #EFF2FE;
+    }
+    &--pink {
+      color: #F887AA;
+      background-color: #FCEFFE;
+    }
+    &--green {
+      color: #00E57B;
+      background-color: #E2FFE6;
+    }
+  }
+  &__btn {
+    @include main-font;
+    text-align: center;
+    background-color: #FFC034;
+    border-radius: 999px;
+    color: #ffffff;
+    border: 1px solid #FFC034;
+    padding: 6px 22px 6px 22px;
+    font-weight: 500;
+    font-size: 18px;
+    transition: 0.3s;
+    @include mobile {
+      font-size: 16px;
+      padding: 5px 20px 5px 20px;
+    }
+  }
+  &__btn:hover {
+    background-color: #000000;
+    color: #ffffff;
+    border-color: #000000;
+    cursor: pointer;
+  }
+  &__name {
+    @include main-font;
+    font-size: 26px;
+    color: #000000;
+    font-weight: 700;
+    margin-top: 15px;
+    margin-bottom: 24px;
+    margin-left: 4px;
+    @include thinner {
+      font-size: 18px;
+    }
+  }
+  &__img {
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 90vh;
+    width: 150vh;
+    position: relative;
+    margin: 0 auto;
+    padding-left: 50px;
+    padding-right: 50px;
+    @include center;
+    max-width: 5000px;
+    &--nhs {
+      background-image: url(../assets/nhs.jpg);
+      background-position: center;
+    }
+    &--tcb {
+      background-image: url(../assets/tcb.jpg);
+      background-position: center;
+    }
+    &--prod {
+      background-image: url(../assets/prod.jpg);
+      background-position: center;
+    }
+  }
+}
+// 
+
+
+// About me section
+.about {
+  background-color: #ffffff;
+  @include center(1366px);
+  border-radius: 25px;
+  box-shadow: 6px 6px 40px 0px rgba(0, 0, 0, .1);
+  padding: 50px 80px 50px 80px;
+  @include thin {
+    @include center(500px);
+    text-align: center;
+    padding: 50px 80px 50px 80px;
+  }
+  @include mobile {
+    padding: 30px;
+    text-align: center;
+  }
+  margin-top: 25px;
+  &__header {
+    @include main-font;
+    font-size: 35px;
+    color: #5d5d5d;
+    font-weight: 700;
+    margin-top: 0px;
+    @include thinnest {
+      font-size: 28px;
+    }
+  }
+  &__info {
+    img {
+      @include column(2/7, $gutter: 5);
+      max-width: 200px;
+      @include thin {
+        @include column(1);
+        max-height: 250px;
+        @include center;
+      }
+      @include mobile {
+        @include center;
+        max-height: 150px;
+      }
+    }
+    div {
+      @include column(5/7, $gutter: 5);
+      @include thin {
+        @include column(1);
+      }
+    }
+  }
+  &__text {
+    @include main-font;
+    font-weight: 500;
+    color: #5d5d5d;
+    font-size: 20px;
+    @include thinnest {
+      font-size: 16px;
+    }
+    line-height: 1.5;
+  }
+  &__socials {
+    img {
+      margin-top: 20px;
+      margin-right: 9px;
+
+    }
+  }
+}
+//
+
+
+
+// My skills
+.skills {
+  text-align: center;
+  &__skill {
+    @include main-font;
+    font-size: 20px;
+    font-weight: 500;
+    display: inline-block;
+    text-align: center;
+    border-radius: 999px;
+    padding: 10px 20px 10px 20px;
+    display: inline-block;
+    margin-right: 4px;
+    margin: 10px 15px 10px 15px;
+    &--orange {
+      color: #FFB000;
+      background-color: #FEF5EF;
+    }
+    &--blue {
+      color: #879EF8;
+      background-color: #EFF2FE;
+    }
+    &--pink {
+      color: #F887AA;
+      background-color: #FCEFFE;
+    }
+    &--green {
+      color: #00E57B;
+      background-color: #E2FFE6;
+    }
+  }
+}
+// 
+
+// My software
+.software {
+  text-align: center;
+  margin-top: 60px;
+  img {
+    margin: 20px 40px 20px 40px;
+  }
+}
+// 
+
+
+// Additional information
+.info {
+  &__header {
+    @include main-font;
+    margin-top: 120px;
+    margin-bottom: 50px;
+    font-size: 42px;
+    font-weight: 500;
+    color: #5d5d5d;
+    text-align: center;
+    @include thinnest {
+      font-size: 32px;
+    }
+    &--extra {
+      margin-top: 180px;
+    }
+  }
+}
+// 
+
+
+
+// Certifications grid
+.certis {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 80px;
+  justify-content: center;
+  margin-bottom: 150px;
+  &__item {
+    min-width: 350px;
+    max-width: 600px;
+    box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, .1);
+    border-radius: 26px;
+    overflow: hidden;
+    @include main-font;
+  }
+  &__name {
+    font-size: 30px;
+    font-weight: 600;
+    color: #5d5d5d;
+    @include thinnest {
+      font-size: 20px;
+    }
+  }
+  &__top-row {
+    padding: 30px 50px 30px 50px;
+    min-height: 80px;
+    img {
+      @include column(1/6, $gutter: 8);
+      max-width: 74px;
+    }
+    p {
+      @include column(5/6, $gutter: 8);
+      margin-top: 4px;
+    }
+  }
+  &__bottom-row {
+    padding: 23px 50px 23px 50px;
+    text-align: center;
+    background-color: #FAC430;
+    p {
+      color: #ffffff;
+      font-size: 25px;
+      font-weight: 500;
+      margin: 0;
+      @include thinnest {
+        font-size: 16px;
+      }
+    }
+    &--wip {
+      background-color: #F2F2F2;
+      p {
+        color: #959595;
+      }
+    }
+  }
+}
+// 
+
+
+// Contact modal
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+// 
+
+// Modal Content/Box
+.modal-content {
+  background-color: #fefefe;
+  margin: 0 auto;
+  margin-top: 100px;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 750px; 
+  @include thin {
+    width: 480px;
+    overflow: scroll;
+  }
+  @include mobile {
+    width: 350px;
+  }
+  max-height: 600px;
+  overflow: none;
+  border-radius: 30px;
+  padding-top: 0px;
+}
+// 
+
+// Modal close
+.close {
+  color: #000;
+  float: right;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+// 
+
+
+// Contact form
+.form {
+  @include center(1000px);
+  @include main-font;
+  padding-left: 25px;
+  padding-right: 25px;
+  margin-top: 80px;
+  border: none;
+  outline: none;
+
+  fieldset {
+    border: none;
+  outline: none;
+  }
+
+  &__col {
+    @include column(1/2, $gutter: 5);
+    @include thin {
+      @include column(1);
+    }
+  }
+
+  label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #8B8B8B;
+  }
+  &__input {
+    border: 1.5px solid #D0D0D0;
+    margin-top: 4px;
+    border-radius: 9px;
+    min-height: 56px;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 500;
+    color: #000000;
+    padding: 5px 20px 5px 20px;
+    margin-bottom: 25px;
+    &--tall {
+      min-height: 176px;
+    }
+  }
+  &__radio {
+    border: 1.5px solid #D0D0D0;
+    border-radius: 9px;
+    height: 12px;
+    width: 12px;
+    padding: 2px 20px 2px 20px;
+    margin-bottom: 25px;
+    margin-top: 15px;
+    display: inline;
+    margin-right: 20px;
+    margin-left: 5px;
+  }
+  input::placeholder {
+    color: #E8E8E8;
+  }
+  &__question {
+    font-size: 14px;
+    font-weight: 600;
+    color: #8B8B8B;
+  }
+  &__explanation {
+    font-weight: 600;
+    font-size: 11px;
+    color: #C1C1C1;
+  }
+  &__radio-label {
+    display: inline;
+    margin-top: -100px;
+  }
+  &__header {
+    font-size: 20px;
+    font-weight: 700;
+  }
+  &__section {
+    margin-bottom: 65px;
+  }
+  &__btn {
+    @include center;
+    border: none;
+    background-color: #006CF2;
+    @include main-font;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 17px;
+    padding: 8px 60px 8px 60px;
+    border-radius: 999px;
+    margin-top: 180px;
+    transition: 0.2s;
+  }
+  &__btn:hover {
+    opacity: 0.7;
+  }
+}
+// 
+
+
+// Project header section
+.proj-head {
+  text-align: center;
+  @include center(1200px);
+  padding: 25px;
+  &__head {
+    font-size: 38px;
+    @include main-font;
+    font-weight: 600;
+    color: #5D5D5D;
+    text-align: center;
+    @include mobile {
+      font-size: 28px;
+    }
+  }
+  &__summary {
+    margin-top: 100px;
+    @include main-font;
+    font-size: 34px;
+    font-weight: 600;
+    color: #FFC546;
+    @include mobile {
+      font-size: 24px;
+    }
+  }
+  &__desc {
+    font-size: 22px;
+    @include main-font;
+    font-weight: 600;
+    color: #5D5D5D;
+    text-align: left;
+    @include mobile {
+      font-size: 16px;
+    }
+  }
+}
+// 
+
+
+// Project overview
+.proj-overview {
+  margin-top: 170px;
+  background-color: #F7F7F7;
+  padding: 25px;
+  &__grid {
+    text-align: center;
+    img {
+      max-width: 260px;
+      margin-left: 12px;
+      margin-right: 12px;
+      margin-top: -125px;
+      margin-bottom: 140px;
+    }
+  }
+}
+// 
+
+
+// Project goals/aims
+.bullet-box {
+  @include center(1564px);
+  margin-top: 68px;
+  margin-bottom: 120px;
+  background-color: #ffffff;
+  border-radius: 25px;
+  box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, .06);
+  padding: 40px 70px 40px 70px;
+  @include mobile {
+      padding: 30px;
+    }
+  &__header {
+    text-align: center;
+    @include main-font;
+    font-size: 32px;
+    font-weight: 600;
+    color: #FFC546;
+    margin-bottom: 50px;
+    @include mobile {
+      font-size: 24px;
+    }
+  }
+  &__desc {
+    @include main-font;
+    font-size: 22px;
+    color: #5D5D5D;
+    font-weight: 400;
+    margin-bottom: 50px;
+    @include mobile {
+      font-size: 18px;
+    }
+  }
+}
+// 
+
+
+// List of goals/aims
+.list {
+  &__item {
+    @include main-font;
+    font-size: 22px;
+    color: #5D5D5D;
+    font-weight: 600;
+    margin-bottom: 30px;
+    @include mobile {
+      font-size: 16px;
+    }
+  }
+}
+// 
+
+
+// Project section
+.proj {
+  &__header {
+    @include main-font;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 600;
+    color: #5D5D5D;
+    @include mobile {
+      font-size: 24px;
+    }
+  }
+  &__desc {
+    @include center(1000px);
+    @include main-font;
+    font-size: 21px;
+    font-weight: 400;
+    color: #5D5D5D;
+    text-align: center;
+    @include mobile {
+      font-size: 16px;
+    }
+  }
+}
+// 
+
+
+// Designs grid
+.images-grid {
+  margin-top: 80px;
+  margin-bottom: 80px;
+  @include center(1200px);
+  @include thinnest {
+    @include center(400px);
+    text-align: center;
+  }
+  &__caption {
+    @include main-font;
+    font-size: 21px;
+    font-weight: 400;
+    color: #5D5D5D;
+    margin-bottom: 80px;
+    line-height: 1.5;
+    @include thinnest {
+      font-size: 15px;
+    }
+  }
+  &__col {
+    @include column(1/3, $gutter: 8);
+    text-align: center;
+    @include thinnest {
+      @include column(1);
+    }
+  }
+}
+// 
+
+
+// Round-up slice
+.roundup {
+  background-color: #00AED8;
+  padding: 50px;
+  margin-bottom: 80px;
+  h2 {
+    @include main-font;
+    text-align: center;
+    font-size: 34px;
+    font-weight: 600;
+    color: #ffffff;
+    @include mobile {
+      font-size: 24px;
+    }
+  }
+  p {
+    @include center(1000px);
+    @include main-font;
+    font-size: 21px;
+    font-weight: 200;
+    color: #ffffff;
+    @include mobile {
+      font-size: 17px;
+    }
+  }
+}
+// 
+
+
